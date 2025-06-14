@@ -23,7 +23,7 @@ public class Topic1 {
         return word.length() * maxHeight;
     }
 
-    public List<Integer> rotLeft(List<Integer> a, int d) {
+    public List<Integer> rotateLeft(List<Integer> a, int d) {
         for (int i = 0; i < d; i++) {
             int first = a.remove(0);
             a.add(first);

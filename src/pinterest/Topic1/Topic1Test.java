@@ -42,10 +42,21 @@ public class Topic1Test {
     }
 
     @Test
-    public void shouldValidateRotLEftWhenIsOk() {
+    public void shouldValidateRotateLeftWhenIsOk() {
         List<Integer> a = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
         int d = 4;
-        Assertions.assertEquals(new ArrayList<>(Arrays.asList(5, 1, 2, 3, 4)), topic1.rotLeft(a, d));
+        /*
+        loop 0: --> (1,   2,   3,   4,   5)
+
+        loop 1: --> (2,   3,   4,   5,   1)
+
+        loop 2: --> (3,   4,   5,   1,   2)
+
+        loop 3: --> (4,   5,   1,   2,   3)
+
+        loop 4: --> (5,   1,   2,   3,   4)
+         */
+        Assertions.assertEquals(new ArrayList<>(Arrays.asList(5, 1, 2, 3, 4)), topic1.rotateLeft(a, d));
     }
 
 
