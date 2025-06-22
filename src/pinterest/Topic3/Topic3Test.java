@@ -8,6 +8,9 @@ public class Topic3Test {
 
     private MyQueueWithTwoStacks queue;
     Topic3 topic3;
+    String s = "AnitaLavaLaTina";
+    String noPalindrome = "AnaNoLavaNada";
+    String noDigitsAndLetters = "@·$%";
 
     @BeforeEach
     void setUp() {
@@ -60,5 +63,41 @@ public class Topic3Test {
         Assertions.assertEquals(3, queue.stackIn.size());
         Assertions.assertEquals(1, queue.peek());
     }
+
+    @Test
+    public void shouldReturnTrueWhenIsDequeDataType() {
+        Assertions.assertEquals(true, topic3.isPalindromeWithADeque(s));
+    }
+
+    @Test
+    public void shouldReturnTrueWhenIsStream() {
+        Assertions.assertEquals(true, topic3.isPalindromeWithAStream(s));
+    }
+
+    @Test
+    public void shouldReturnTrueWhenIsStringBuilder() {
+        Assertions.assertEquals(true, topic3.isPalindromeWithStringBuilder(s));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenIsDequeDataType() {
+        Assertions.assertEquals(false, topic3.isPalindromeWithADeque(noPalindrome));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenIsStream() {
+        Assertions.assertEquals(false, topic3.isPalindromeWithAStream(noPalindrome));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenIsStringBuilder() {
+        Assertions.assertEquals(false, topic3.isPalindromeWithStringBuilder(noPalindrome));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenIsNotLettersAndDigits() {
+        Assertions.assertEquals(false, topic3.isPalindromeWithStringBuilder(noDigitsAndLetters));
+    }
+
 
 }
