@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.TreeMap;
+import java.util.TreeSet;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -175,7 +176,7 @@ public class StreamMethods {
     }
 
 
-    public static void main(String[] args) {
+    public static void executeStreamWithAutoFilters() {
         List<Auto> autos = List.of(
                 new Auto("Volkswagen", "Amarok", 25000),
                 new Auto("Volkswagen", "Taos", 32000),
@@ -195,6 +196,10 @@ public class StreamMethods {
         System.out.println(VWOrChevroletModel(autos));
         System.out.println(anyMatchWithA(autos));
         System.out.println(pricesAvg(autos));
+    }
+
+    public static void main(String[] args) {
+        
     }
 
 
