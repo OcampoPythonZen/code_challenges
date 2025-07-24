@@ -37,6 +37,12 @@ public class TimeAndSpaceComplexity {
         }
     }
 
+    /*
+    ✅ Final Result
+    Type                --      	Complexity
+    Time Complexity	                    O(n)
+    Space Complexity	                O(n) */
+
     public static Result crunchyRollChallenge(String[][] records) {
         Map<String, Integer> balance = new HashMap<>();
         Set<String> noEntry = new HashSet<>();
@@ -55,11 +61,13 @@ public class TimeAndSpaceComplexity {
                 }
             }
         }
+
         for (Map.Entry<String, Integer> entry : balance.entrySet()) {
             if (entry.getValue() > 0) {
                 noExit.add(entry.getKey());
             }
         }
+
         return new Result(noExit, new ArrayList<>(noEntry));
     }
 }
